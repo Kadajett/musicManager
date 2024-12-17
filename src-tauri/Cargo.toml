@@ -1,0 +1,44 @@
+[package]
+name = "test-app-default"
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["you"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "test_app_default_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rodio = {version = "0.19.0", features = ["symphonia-all"] }
+tauri-plugin-fs = { version = "2.0.0-alpha.0" }
+dirs = "5.0"
+symphonia = { version = "0.5", features = ["mp3", "flac", "wav", "aac", "alac", "ogg", "isomp4"] }
+once_cell = "1.18"
+parking_lot = "0.12"
+audio = "0.2.0"
+audio-device = "0.1.0-alpha.6"
+thread_local = "1.1.8"
+lazy_static = "1.5.0"
+lofty = "0.21.1"
+base64 = "0.21.7"
+directories = "5.0"
+sha2 = "0.10.8"
+tar = "0.4.43"
+flate2 = "1.0.35"
+notify = "7.0.0"
+tokio = "1.42.0"
+log = "0.4"
+env_logger = "0.9"

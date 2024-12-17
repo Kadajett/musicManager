@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes dropHighlight {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+  }
+}
+
+.drop-highlight {
+  animation: dropHighlight 1s ease-out;
+}
+
+/* Dark mode version */
+@media (prefers-color-scheme: dark) {
+  @keyframes dropHighlightDark {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.5);
+    }
+    50% {
+      transform: scale(1.02);
+      box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.5);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.5);
+    }
+  }
+
+  .drop-highlight {
+    animation: dropHighlightDark 1s ease-out;
+  }
+}
+
+@layer base {
+  :root {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+} 
